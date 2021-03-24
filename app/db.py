@@ -11,3 +11,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{configDict["db_user"]}:{confi
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
+from models.user import User
+
+db.create_all()
+db.session.commit()
